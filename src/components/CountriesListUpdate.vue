@@ -10,6 +10,7 @@
             :filter="searchText"
             responsive="sm"
             striped
+            dark
             :sort-by.sync="sortBy"
             sort-icon-left
             sticky-header
