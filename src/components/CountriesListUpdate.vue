@@ -2,8 +2,10 @@
     <div id="list-box">
         <!-- This is the div for the search box -->
         
-
-        <input type="text" placeholder="Enter the name of the country here" class="form-control" v-model="searchText">
+        <b-alert class="mt-4" show variant="info" v-if="!rowClicked">Click on a row for details</b-alert>
+        <h2 v-else class="countriesHeader text-center">Countries</h2>
+        
+        <input type="text" placeholder="Search (country name)" class="form-control" v-model="searchText">
         <div id="table">
         <b-table 
             :fields="fields"
@@ -36,13 +38,14 @@
                 show: false,
                 rowClicked:false,
                 data:'',
+                countriesHeader: 'countriesHeader',
                 fields: [
-                    {key: 'Country', sortable: 'true'},
-                    {key: 'TotalConfirmed', sortable: 'true'},
-                    {key: 'TotalDeaths', sortable: 'true'},
-                    {key: 'TotalRecovered', sortable: 'true'},
+                    {key: 'title', sortable: 'true'},
+                    {key: 'total_cases', sortable: 'true'},
+                    {key: 'total_deaths', sortable: 'true'},
+                    {key: 'total_recovered', sortable: 'true'},
                ],
-                countries: '',
+                countries: Array,
             }
         },
         created() {
@@ -51,7 +54,7 @@
                     return response.json() 
                 })
                 .then(data => {
-                    this.countries = data.Countries
+                    this.countries = Array.from(Object.values(Object.values(data)[1]["0"]))
                     console.log(this.countries)
                 })
         },
@@ -85,6 +88,14 @@
 
 .g-alert {
     margin: 20px 0 0 0;
+}
+
+.countriesHeader {
+    color: #487a23;
+    text-decoration: underline;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-family: 'Lobster', cursive;
 }
 
 input {

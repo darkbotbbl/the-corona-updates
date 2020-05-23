@@ -4,7 +4,10 @@
             <h1 class="text-center" id="headerFont">The Corona Updates Arena</h1>
             <app-header></app-header>
             <router-view></router-view> 
-       </b-container>
+            <div id="devNote">
+                <p>Designed and Coded by gRockson</p>
+            </div>
+        </b-container>
     </div>
 </template>
 
@@ -33,8 +36,22 @@ export default {
 
 <style>
 
+body {
+    background-color: #f5f5f5;    
+}
+
+#devNote { 
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    postion: absolute;
+    bottom: 0;
+}
+
+
+
 #headerFont {
     font-family: 'Tangerine', 'cursive';
+    font-weight: bolder;
     color: #c43d10;
 }
 

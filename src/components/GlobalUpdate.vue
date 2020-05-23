@@ -1,6 +1,6 @@
 <template>
     <div id="global-box">
-        <h2>Global Status</h2>
+        <h2 class="text-center globalHeader">Global Status</h2>
         <div>
             <b-card-group deck>
                 <b-card header-bg-variant="primary" header="Total Cases" header-text-variant="white" border-variant="primary" class="text-center" body-tag="h3" header-tag="h2">
@@ -22,7 +22,7 @@
                     <b-card-text>{{ global["total_unresolved"] }}</b-card-text>
                 </b-card>
 
-                <b-card header-bg-variant="dark" header="Total Active Cases" header-text-variant="white" vorder-variant="dark" class="text-center" header-tag="h2" body-tag="h3">
+                <b-card header-bg-variant="dark" header="Total Active Cases" header-text-variant="white" border-variant="dark" class="text-center" header-tag="h2" body-tag="h3">
                     <b-card-text>{{ global["total_active_cases"] }}</b-card-text>
                 </b-card>
 
@@ -54,6 +54,7 @@
         data() {
             return {
                 global: '',
+                globalHeader: 'globalHeader'
             }
         },
         created() {
@@ -75,5 +76,12 @@
 <style scoped>
 #global-box {
     margin: 20px;
+}
+
+.globalHeader {
+    color: #487a23;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    font-family: 'Lobster', cursive;
 }
 </style>

@@ -1,7 +1,13 @@
 <template>
     <b-container>
-        <country-detail-update></country-detail-update>
-        <countries-list-update></countries-list-update>
+        <b-row cols="1" cols-lg="2">
+            <b-col >
+                <countries-list-update></countries-list-update>
+            </b-col>
+            <b-col>
+                <country-detail-update></country-detail-update>
+            </b-col>
+        </b-row>
     </b-container>
 </template>
 
