@@ -42,19 +42,11 @@
                     {key: 'TotalDeaths', sortable: 'true'},
                     {key: 'TotalRecovered', sortable: 'true'},
                ],
-                items: [
-                    {country: 'Germany', totalCases: 2434, totalDeaths: 344, totalRecoveries: 1343, newCases: 33, newDeaths: 2, newRecoveries: 744},
-                    {country: 'Albania', totalCases: 111, totalDeaths: 292, totalRecoveries: 10, newCases: 99, newDeaths: 1, newRecoveries: 90},
-                    {country: 'Ghana', totalCases: 2432, totalDeaths: 441, totalRecoveries: 1343, newCases: 33, newDeaths: 2, newRecoveries: 744},
-                    {country: 'South Africa', totalCases: 234, totalDeaths: 31, totalRecoveries: 1343, newCases: 33, newDeaths: 2, newRecoveries: 744},
-                    {country: 'America', totalCases: 2433434, totalDeaths: 31, totalRecoveries: 1343, newCases: 33, newDeaths: 2, newRecoveries: 744},
-                    {country: 'China', totalCases: 24324, totalDeaths: 31, totalRecoveries: 1343, newCases: 33, newDeaths: 2, newRecoveries: 744},
-                ],
                 countries: '',
             }
         },
         created() {
-            this.$http.get('https://api.covid19api.com/summary')
+            this.$http.get('https://api.thevirustracker.com/free-api?countryTotals=ALL')
                 .then(response => {
                     return response.json() 
                 })
