@@ -29,7 +29,7 @@
     export default {
         data() {
             return {
-                sortBy: 'country',
+                sortBy: 'Country',
                 searchText: '',
                 hover: true,
                 dark: false,
