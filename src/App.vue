@@ -7,7 +7,8 @@
                     <global-update></global-update>
                 </b-col>
             </b-row>
-
+            
+            <b-alert show variant="info" class="text-center" v-if="!showDetail">Click on a country for Details</b-alert>
             <!-- Row of the Stuff about the countries -->
             <b-row cols="1" cols-sm="1" cols-md="1" cols-lg="2">
                 <!-- Column of the country detail update -->

@@ -6,26 +6,26 @@
             <!-- this is the column for daily cases, you are going to fill them dynamically with data fetched from an api -->
             <b-col>
                 <b-row>
-                    Total Cases: {{ global.totalCases }}
+                    Total Cases: {{ global.TotalConfirmed }}
                 </b-row>
                 <b-row>
-                    Total Deaths: {{ global.totalDeaths }}
+                    Total Deaths: {{ global.TotalDeaths }}
                 </b-row>
                 <b-row>
-                    Total Recoveries: {{ global.totalRecoveries }}
+                    Total Recoveries: {{ global.TotalRecovered }}
                 </b-row>
             </b-col>
             
             <!-- this is the column for new data, say daily updates, you are going to fill it dynamically with data -->
             <b-col>
                 <b-row>
-                    New Cases: {{ global.newCases }}
+                    New Cases: {{ global.NewConfirmed }}
                 </b-row>
                 <b-row>
-                    New Deaths: {{ global.newDeaths }}
+                    New Deaths: {{ global.NewDeaths }}
                 </b-row>
                 <b-row>
-                    New Recoveries: {{ global.newRecoveries }}
+                    New Recoveries: {{ global.NewRecovered }}
                 </b-row>
             </b-col>
         </b-row>
@@ -36,12 +36,21 @@
     export default {
         data() {
             return {
-                global: {
-                    totalCases: 5119923, totalDeaths: 180000, totalRecoveries: 1200234,
-                    newCases: 19882, newDeaths: 1344, newRecoveries: 113449,
-                }
+                global: '',
             }
-        }
+        },
+        created() {
+            this.$http.get('https://api.covid19api.com/summary')
+                .then(response => { 
+                    return response.json()
+                })
+                .then(data => {
+                    this.global = data.Global
+                })
+                .then(errors => {   
+                    console.log(errors)
+                })
+            }
     }
 </script>
 

@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueResource from 'vue-resource'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import App from './App.vue'
 
@@ -10,6 +11,10 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
 // Install the IconsPlugin
 Vue.use(IconsPlugin)
+
+// Install the VueResource for http requests
+Vue.use(VueResource)
+
 
 export const eventBus = new Vue() // This is the eventBus that I will use to move data from component to component
 
