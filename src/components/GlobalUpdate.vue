@@ -23,11 +23,11 @@
                 </b-card>
 
                 <b-card header-bg-variant="dark" header="Total Active Cases" header-text-variant="white" border-variant="dark" class="text-center" header-tag="h2" body-tag="h3">
-                    <b-card-text>{{ global["total_active_cases"] }}</b-card-text>
+                    <b-card-text>{{ global["total_serious_cases"] }}</b-card-text>
                 </b-card>
 
                 <b-card header-bg-variant="danger" header="Total Serious Cases" header-text-variant="white" border-variant="danger" class="text-center" header-tag="h2" body-tag="h3">
-                    <b-card-text>{{ global["total_serious_cases"] }}</b-card-text>
+                    <b-card-text>{{ global["total_active_cases"] }}</b-card-text>
                 </b-card>
             </b-card-group>
         </div>

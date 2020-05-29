@@ -34,10 +34,10 @@
         <div class="mt-1">
             <b-card-group deck>
                 <b-card header="Total Active Cases" class="text-center" header-bg-variant="warning" header-text-variant="white" border-variant="warning" body-tag="h4">
-                    <b-card-text>{{ country.total_active_cases }}</b-card-text>
+                    <b-card-text>{{ country.total_serious_cases }}</b-card-text>
                 </b-card>
                 <b-card header="Total Serious Cases" class="text-center" header-bg-variant="danger" header-text-variant="white" border-variant="danger" body-tag="h4">
-                    <b-card-text>{{ country.total_serious_cases }}</b-card-text>
+                    <b-card-text>{{ country.total_active_cases }}</b-card-text>
                 </b-card>
             </b-card-group>
         </div>
